@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Quản lí - đào tạo doanh nghiệp";
+    ViewBag.notRenderMenu = true;
+
+}
+<div class="container">
+    @using (Html.BeginForm("savedaotaodoanhnghiep", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-md-4">
+                <label>1. Giáo trình thực tiễn</label>
+                <input type="text" id="tenkhoahoc" name="giaotrinhthuctien" class="form-control" value="@ViewBag.text_giaotrinhthuctien" />
+                <label>2. Bài tập ứng dụng</label>
+                <input type="text" id="baitapungdung" name="baitapungdung" class="form-control" value="@ViewBag.text_baitapungdung" />
+                <label>3. Linh hoạt sáng tạo</label>
+                <input type="text" id="linhhoatsangtao" name="linhhoatsangtao" class="form-control" value="@ViewBag.text_linhhoatsangtao" />
+                <label>4. Chương trình đào tạo doanh nghiệp</label>
+                <input type="text" id="daotaodoanhnghiep" name="daotaodoanhnghiep" class="form-control" value="@ViewBag.text_chuongtrinhdaotaodoanhnghiep" />
+            </div>
+            <div class="col-md-4">
+                <label>5. Phân tích khảo sát</label>
+                <input type="text" id="phantichkhaosat" name="phantichkhaosat" class="form-control" value="@ViewBag.text_phantichkhaosat" />
+                <label>6. Tư vấn giải pháp</label>
+                <input type="text" id="tuvangiaiphap" name="tuvangiaiphap" class="form-control" value="@ViewBag.text_tuvangiaiphap" />
+                <label>7. Đánh giá kết quả</label>
+                <input type="text" id="danhgiaketqua" name="danhgiaketqua" class="form-control" value="@ViewBag.text_danhgiaketqua" />
+                <label>8. Chương trình tư vấn doanh nghiệp</label>
+                <input type="text" id="chuongtrinhtuvandoanhnghiep" name="chuongtrinhtuvandoanhnghiep" class="form-control" value="@ViewBag.text_chuongtrinhtuvandoanhnghiep" />
+
+            </div>
+
+            <input class="btn btn-success" type="submit" value="Save Change" />
+        </div>
+
+    }
+
+</div>

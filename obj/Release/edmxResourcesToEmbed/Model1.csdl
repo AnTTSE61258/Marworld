@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="marworlddbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="StringConstant">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="marworlddbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="StringConstants" EntityType="Self.StringConstant" />
+    <EntitySet Name="Courses" EntityType="marworlddbModel.Course" />
+    <EntitySet Name="Teachers" EntityType="marworlddbModel.Teacher" />
+    <EntitySet Name="Camnhans" EntityType="marworlddbModel.Camnhan" />
+    <EntitySet Name="BaiViets" EntityType="marworlddbModel.BaiViet" />
+    <EntitySet Name="CustomImages" EntityType="marworlddbModel.CustomImage" />
+    <EntitySet Name="Tailieux" EntityType="marworlddbModel.Tailieu" />
+    <EntitySet Name="TeacherInCourses" EntityType="marworlddbModel.TeacherInCourse" />
+  </EntityContainer>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="picture" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="lithuyet" Type="Int32" />
+    <Property Name="casestudy" Type="Int32" />
+    <Property Name="workshop" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="thoiluong" Type="Int32" />
+    <Property Name="khaigiang" Type="DateTime" Precision="0" />
+    <Property Name="hocphi" Type="Double" />
+    <Property Name="thoigianhoc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="handangki" Type="DateTime" Precision="0" />
+    <Property Name="noichung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="doituong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gioithieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="showOnSlider" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="congty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="caunoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gioithieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Camnhan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="camnhan1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="doituong" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BaiViet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CustomImage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imageCategory" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="imageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tailieu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="authorname" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="loimodau" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="gioithieuchung" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="fileURL" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="imageUrl" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="authorURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TeacherInCourse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="courseId" Type="Int32" />
+    <Property Name="teacherid" Type="Int32" />
+  </EntityType>
+</Schema>

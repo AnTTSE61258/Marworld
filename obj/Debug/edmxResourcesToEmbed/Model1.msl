@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="marworlddbModelStoreContainer" CdmEntityContainer="marworlddbEntities">
+    <EntitySetMapping Name="StringConstants">
+      <EntityTypeMapping TypeName="marworlddbModel.StringConstant">
+        <MappingFragment StoreEntitySet="StringConstant">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="marworlddbModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="gioithieu" ColumnName="gioithieu" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="doituong" ColumnName="doituong" />
+          <ScalarProperty Name="noichung" ColumnName="noichung" />
+          <ScalarProperty Name="handangki" ColumnName="handangki" />
+          <ScalarProperty Name="thoigianhoc" ColumnName="thoigianhoc" />
+          <ScalarProperty Name="hocphi" ColumnName="hocphi" />
+          <ScalarProperty Name="khaigiang" ColumnName="khaigiang" />
+          <ScalarProperty Name="thoiluong" ColumnName="thoiluong" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="workshop" ColumnName="workshop" />
+          <ScalarProperty Name="casestudy" ColumnName="casestudy" />
+          <ScalarProperty Name="lithuyet" ColumnName="lithuyet" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="marworlddbModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="gioithieu" ColumnName="gioithieu" />
+          <ScalarProperty Name="caunoi" ColumnName="caunoi" />
+          <ScalarProperty Name="congty" ColumnName="congty" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Camnhans">
+      <EntityTypeMapping TypeName="marworlddbModel.Camnhan">
+        <MappingFragment StoreEntitySet="Camnhan">
+          <ScalarProperty Name="doituong" ColumnName="doituong" />
+          <ScalarProperty Name="camnhan1" ColumnName="camnhan" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaiViets">
+      <EntityTypeMapping TypeName="marworlddbModel.BaiViet">
+        <MappingFragment StoreEntitySet="BaiViet">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomImages">
+      <EntityTypeMapping TypeName="marworlddbModel.CustomImage">
+        <MappingFragment StoreEntitySet="CustomImage">
+          <ScalarProperty Name="imageURL" ColumnName="imageURL" />
+          <ScalarProperty Name="imageCategory" ColumnName="imageCategory" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tailieux">
+      <EntityTypeMapping TypeName="marworlddbModel.Tailieu">
+        <MappingFragment StoreEntitySet="Tailieu">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="authorURL" ColumnName="authorURL" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+          <ScalarProperty Name="fileURL" ColumnName="fileURL" />
+          <ScalarProperty Name="gioithieuchung" ColumnName="gioithieuchung" />
+          <ScalarProperty Name="loimodau" ColumnName="loimodau" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="authorname" ColumnName="authorname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

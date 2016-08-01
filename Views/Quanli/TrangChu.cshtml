@@ -1,0 +1,110 @@
+﻿@{ 
+    ViewBag.Title = "Quản lí trang chủ";
+    ViewBag.notRenderMenu = true;
+    FileInfo[] files = ViewBag.sliderFiles;
+    var fullNames = files.Select(file => file.FullName).ToArray();
+    string rootString = ViewBag.rootString;
+    string text_khampha = ViewBag.text_khampha;
+    string text_giangvienchuyengia = ViewBag.text_giangviengchuyengia;
+}
+<label>1. Hình ảnh slider</label>
+<div style="margin-left:10%">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>URL.</th>
+                <th>PreviewImage</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0;i < files.Count();i++)
+            {
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @fullNames[i]
+                    </td>
+                    <td>
+                       <!-- <img  style="height:auto;width:200px" src="@fullNames[i]"/>-->
+                        <img style="width:200px;height:auto" src="~/@Url.Content(files[i].FullName.Replace(rootString, string.Empty)).Replace("\\", "/")" />
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" onclick="deleteSliderImage('@files[i].Name')">Delete</button>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+    <div>
+        <label>Upload image</label>
+        @using (Html.BeginForm("UploadImage", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="file" />
+            <input type="submit" value="OK" />
+        }
+    </div>
+</div>
+
+<label>2. Khám phá bản thân trắc nghiệm nghề nghiệp</label>
+<div style="margin-left:10%">
+    <div class="form-group">
+        <textarea class="form-control" id="text_khampha" rows="5"  >@text_khampha</textarea>
+    </div>
+    
+</div>
+<label>3. Giảng viên chuyên gia</label>
+<div style="margin-left:10%">
+    <div class="form-group">
+        <textarea class="form-control" id="text_giangvienchuyengia" rows="5">@text_giangvienchuyengia</textarea>
+    </div>
+</div>
+
+<button class="btn btn-success" onclick="saveChange()">Save change</button>
+
+
+<script>
+    function saveChange() {
+        var text_khampha = $("#text_khampha").val();
+        var text_giangvienchuyengia = $("#text_giangvienchuyengia").val();
+        $.ajax({
+            url: '/Quanli/SaveChangeTrangChu',
+            data: {
+                text_khampha: text_khampha,
+                text_giangvienchuyengia:text_giangvienchuyengia
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+            },
+            type: 'POST'
+        });
+    }
+    function deleteSliderImage(fullname) {
+        $.ajax({
+            url: '/Quanli/DeleteImage',
+            data: {
+                type: "sliderImage",
+                name: fullname
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+            },
+            type: 'POST'
+        });
+    }    
+</script>

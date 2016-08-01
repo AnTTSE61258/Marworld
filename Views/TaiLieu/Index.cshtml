@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Tài liệu dành cho học viên Marworld";
+    List<Tailieu> tailieux= ViewBag.tailieux; 
+}
+<div class="container-fluid" style="margin:0 0 30px;padding:0;">
+    <img src="~/Content/Template/file.png" class="img-responsive" style="width:100%;">
+</div>
+
+<div class="container-fluid" style="margin:30px 0 100px;">
+    <div class="container">
+        <div class="row" style="margin:10px 0;">
+            <div class="row" style="padding:0px;margin:0;">
+                <div class="row" style="color: #5a5a5c;font-size: 30px;font-weight: 600;margin:0;">TRAO DỒI KIẾN THỨC VỚI</div>
+                <div class="row" style="color: #363636;font-size: 50px;font-weight: 600;margin:0;line-height:55px;">TRAO DỒI KIẾN THỨC VỚI</div>
+                <div class="row" style="color: #a4a2a2;font-size: 30px;font-weight: 600;margin:0;line-height:50px;">BUSINESS &amp; MARKETING</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row" style="margin:0;color: #a4a2a2;font-size: 21px;margin:0;line-height:25px;">
+                         @ViewBag.tailieutext
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row" style="margin:0;">
+                        <form class="navbar-form" style="margin-top:0px;">
+                            <div class="form-group has-feedback" style="width:100%;">
+                                <input type="text" class="form-control inputsearch" value="Tìm kiếm thông tin ....." style="width:100%;background:#f26c23;color:#fff;float:right">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" style="margin:0;padding: 0 17px;">
+                        <ul id="nav3" class="nav nav-tabs" style="border:none;float:right;">
+                            <li role="presentation"><a href="/tailieu?cat=thuonghieu" class="btn buttonorange" style="text-decoration: none;">Thương hiệu</a></li>
+
+                            <li role="presentation"><a href="/tailieu?cat=marketing" class="btn buttonorange" style="text-decoration: none;">Marketing</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @for (int i = 0; i < tailieux.Count; i += 3)
+        {
+            <div class="row" style="margin:0;">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        @for (int j = i; j < i + 3 && j < tailieux.Count; j++)
+                        {
+                            Tailieu t = tailieux.ElementAt(j);
+
+                            <div class="col-sm-4" style="padding-left:0px;">
+                                <div class="row" style="color: #a4a2a2;font-size: 20px;margin:0;line-height:25px;">
+                                    <a href="/tailieu/@t.id">
+                                        <img src="@t.imageUrl" class="img-responsive" style="width:100%;margin:20px 0;">
+                                    </a>
+                                    <a href="/tailieu/@t.id" style="color:#f47a22;text-decoration:none;">
+                                        <h3 style="margin-bottom: 20px;margin-top: 0px;font-weight: 600;font-size: 18px;">
+                                            <i>@t.name</i>
+                                        </h3>
+                                    </a>
+                                    <em style="font-size:14px;font-weight:normal;">
+                                        @t.loimodau                               <br>
+                                        <span style="float:right;"> <b>... <a href="/tailieu/@t.id">Xem thêm</a></b></span><b>
+                                        </b>
+                                    </em><b>
+                                    </b>
+                                </div><b>
+                                </b>
+                            </div>
+
+
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+     </div>
+</div>

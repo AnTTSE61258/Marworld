@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b052c62a0088452ba70d7f36a1729ab9" Name="Diagram1">
+        <EntityTypeShape EntityType="marworlddbModel.StringConstant" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="marworlddbModel.Course" Width="1.5" PointX="2.375" PointY="0.75" />
+        <EntityTypeShape EntityType="marworlddbModel.Teacher" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="marworlddbModel.Camnhan" Width="1.5" PointX="4" PointY="0.625" />
+        <EntityTypeShape EntityType="marworlddbModel.BaiViet" Width="1.5" PointX="4" PointY="2.5" />
+        <EntityTypeShape EntityType="marworlddbModel.CustomImage" Width="1.5" PointX="7.25" PointY="2.375" />
+        <EntityTypeShape EntityType="marworlddbModel.Tailieu" Width="1.5" PointX="5.625" PointY="0.75" />
+        <EntityTypeShape EntityType="marworlddbModel.TeacherInCourse" Width="1.5" PointX="7.25" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

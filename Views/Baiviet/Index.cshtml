@@ -1,0 +1,81 @@
+﻿
+@{
+    BaiViet b = ViewBag.baiviet;
+    ViewBag.Title = b.title;
+    List<BaiViet> allbaiviet = ViewBag.allbaiviet;
+}
+<div class="container-fluid" style="margin:30px 0 100px;">
+    <div class="container">
+        <div class="row" style="margin:10px 0;">
+            <div class="row" style="margin:0;">
+                <div class="col-sm-7">
+                    <div class="row" style="color: #5a5a5c;font-size: 30px;font-weight: 600;margin:0;">TIN TỨC NỔI BẬT</div>
+                    <div class="row" style="color: #f47a22;font-size: 36px;font-weight: 600;margin:0;line-height:55px;">@b.title</div>
+                    <div class="row" style="color: #a4a2a2;font-size: 30px;font-weight: 600;margin:0;line-height:50px;">BUSINESS &amp; MARKETING</div>
+                    <div class="row" style="margin:0;color: #a4a2a2;font-size: 21px;margin:0;line-height:25px;">
+                        @b.description
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        
+
+                        <!-- Wrapper for slides -->
+                        <div class="" role="listbox">
+                            <img src="@b.image" style="width:100%;height:auto"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:50px 0 0;">
+            <div class="col-sm-8" style="font-size:20px;color:#a3a1a2;line-height:30px;">
+                <p style="text-align:justify">
+                    @Html.Raw(b.detail)
+
+                </p>
+
+                <div>
+                    <ul>
+                        @foreach (BaiViet morePost in allbaiviet.FindAll(bai => bai.category.Equals(b.category)))
+                        {
+                            <li><a href="/baiviet/@morePost.id">@morePost.title</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div style="line-height:1.42857143;font-size: 18px;padding:10px 0;color:#f47a22;border-bottom:3px solid #333;font-weight: 600;">TIÊU ĐIỂM <br>CHUYÊN NGÀNH</div>
+                <ul style="margin: 10px 0;list-style-type: none;padding: 5px;overflow: auto;font-size:13px;max-height:1000px;border-bottom:3px solid #333;">
+
+                    @{
+                        for (int i = 0; i < allbaiviet.Count; i++)
+                        {
+                            BaiViet b2 = allbaiviet.ElementAt(i);
+                            if (SLIMCONFIG.category_tieudiemchuyennganh.Equals(b2.category))
+                            {
+                                <li style="margin:15px 0 20px;">
+                                    <img src="@b2.image" class="img-responsive" style="width:100%;">
+                                    <div style="margin:10px 0;">
+                                        <a href="/baiviet/@b2.id" style="color:#f47a22;text-decoration:none;font-weight:600;text-transform: uppercase;">@b2.title
+                                        </a>
+                                        <br>
+                                        <em style="color:#a4a2a2;">
+                                            @b2.description
+                                        </em>
+                                    </div>
+                                </li>
+                            }
+
+                        }
+                    }
+                  
+
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+</div>
+

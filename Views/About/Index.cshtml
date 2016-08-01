@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Về marworld";
+    List<Teacher> allTeachers = ViewBag.allTeachers;
+    List<CustomImage> customImages = ViewBag.headerImage;
+    CustomImage cHeader = customImages.LastOrDefault();
+}
+<div>
+    <div class="row">
+        @if (cHeader != null)
+        {
+            <img src="@cHeader.imageURL" style="width:100%;height:auto" />
+
+        }
+    </div>
+    <div class="container" style="margin-top:20px">
+        <div class="col-xs-3">
+            <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-left">
+                <li class="active"><a href="#home" data-toggle="tab">Về chúng tôi</a></li>
+                <li><a href="#messages" data-toggle="tab">Tầm nhìn sứ mệnh</a></li>
+                <li><a href="#profile" data-toggle="tab">Tại sao lại chọn Marworld</a></li>
+                <li><a href="#settings" data-toggle="tab">Giảng viên chuyên gia</a></li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">@Html.Raw(ViewBag.text_vechungtoi)</div>
+                <div class="tab-pane" id="messages">@Html.Raw(ViewBag.text_tamnhinsumenh)</div>
+                <div class="tab-pane" id="profile">@Html.Raw(ViewBag.text_taisaolaichon)</div>
+                <div class="tab-pane" id="settings">
+
+
+                    <div class="container-fluid" style="margin:30px 0 80px;">
+                        <div class="container">
+                            <div class="row" style="margin:0;">
+                                <div class="row" style="color: #333;font-size: 50px;font-weight: 600;margin:0;line-height:60px;">GIẢNG VIÊN CHUYÊN GIA</div>
+                                <div class="row" style="color: #a4a2a2;font-size: 30px;font-weight: 600;margin:0;line-height:50px;">MARKETING &amp; KINH DOANH</div>
+                            </div>
+                            <hr style="border-bottom:4px solid #d6d6d6;margin: 10px 0 20px;">
+                            @for (int i = 0; i < allTeachers.Count; i += 3)
+                            {
+                                <div class="row" style="margin:20px">
+                                    @for (int j = i; j < i + 3 && j < allTeachers.Count; j++)
+                                    {
+                                        Teacher t = allTeachers.ElementAt(j);
+
+                                        <div class="col-sm-4">
+                                            <div class="" style="padding:0;">
+                                                <a href="#" data-toggle="modal" data-target="#modal_@t.id">
+                                                    <img src="@t.picture" style="height:200px;width:auto" class="img-responsive">
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-6" style="font-size: 17px;color: #a4a2a2;font-weight: 600;">
+                                                <a href="#" data-toggle="modal" data-target="#modal_@t.id">
+                                                    <h3 style="color:#f47a22;font-weight: 600;margin-top:0;white-space:nowrap">@t.name </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- Modal -->
+@{
+    for (int i = 0; i < allTeachers.Count; i++)
+    {
+        Teacher t = allTeachers.ElementAt(i);
+        <div id="modal_@t.id" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">THÔNG TIN GIẢNG VIÊN</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row" style="margin:10px 0;">
+                            <div class="col-sm-4">
+                                <div class="row" style="margin:0;">
+                                    <center>
+                                        <img src="@t.picture" class="img-responsive">
+                                    </center>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="row" style="margin: 10px 0;font-size: 20px;font-weight: 600;color: #666666;">
+                                    GIỚI THIỆU GIẢNG VIÊN
+                                </div>
+                                <div class="row" style="margin: 10px 0;">
+                                    <span style="color:#f26b23;margin-top: 10px;font-size: 40px;border-bottom: 2px solid #e1dede;font-weight: 600;">@t.name</span>
+                                </div>
+                                <div class="row" style="margin: 10px 0;font-size:25px;">
+                                    <i>
+                                        @t.congty
+                                    </i>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:30px 0;">
+                                <div class="col-sm-12">
+                                    <div style="color:#333;font-size: 18px;margin-bottom:10px;">CÂU NÓI BẤT HỮU</div>
+                                    <p style="color:#a3a1a2;font-size:16px;"><i>“@t.caunoi”  </i></p>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:30px 0;">
+                                <div class="col-sm-12">
+                                    <div style="color:#333;font-size: 18px;margin-bottom:10px;">GIỚI THIỆU CHUNG</div>
+                                    <p style="color:#a3a1a2;font-size:16px;"><i>@t.gioithieu</i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+}

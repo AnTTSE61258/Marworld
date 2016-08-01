@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Quản lí  trang cơ hội nghề nghiệp";
+    ViewBag.notRenderMenu = true;
+
+}
+<div class="container">
+    <h3>Cơ hội nghề nghiệp</h3>
+    @using (Html.BeginForm("saveCohoinghenghiep", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <textarea id="giaotrinh" class="form-control" rows="30" name="giaotrinh">@ViewBag.text_cohoinghenghiep</textarea>
+        <br />
+        <input type="submit" class="btn btn-success" value="Lưu lại" id="btnsubmit" />
+    }
+</div>
+
+<script>
+    CKEDITOR.replace('giaotrinh');
+
+</script>

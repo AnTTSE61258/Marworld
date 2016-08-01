@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Sự kiện - marworld";
+    List<BaiViet> baiviets = ViewBag.allbaiviet;
+    BaiViet mainB = baiviets.FirstOrDefault();
+}
+
+<div class="container-fluid" style="margin:30px 0 100px;">
+    <div class="container">
+        <div class="row" style="margin:10px 0;">
+            <div class="row" style="margin:0;">
+                <div class="col-sm-7">
+                    <div class="row" style="color: #5a5a5c;font-size: 30px;font-weight: 600;margin:0;">CẬP NHẬT LIÊN TỤC</div>
+                    <div class="row" style="color: #363636;font-size: 50px;font-weight: 600;margin:0;line-height:55px;">SỰ KIỆN NỔI BẬT</div>
+                    <div class="row" style="color: #a4a2a2;font-size: 30px;font-weight: 600;margin:0;line-height:50px;">BUSINESS &amp; MARKETING</div>
+                    <div class="row" style="margin:0;color: #a4a2a2;font-size: 21px;margin:0;line-height:25px;">
+                        @ViewBag.text_sukien
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        @{
+                            if (mainB != null)
+                            {
+                                <div class="" role="listbox">
+                                    <img src="@mainB.image" class="img-responsive" style="width:100%;height:auto">
+                                    <a href="/baiviet/@mainB.id" style="color:#f47a22;text-decoration:none;margin-top:20px">
+                                        <h3 style="margin-bottom: 20px;margin-top: 0px;font-weight: 600;font-size: 18px;margin-top:30px">
+                                            <i>@mainB.title</i>
+                                        </h3>
+                                    </a>
+                                    <em style="font-size:14px;font-weight:normal;">
+                                        @mainB.description		    					<br>
+                                        <span style="float:right;"> <b>... <a href="/baiviet/@mainB.id">xem thêm</a></b></span><b>
+                                        </b>
+                                    </em><b>
+                                    </b>
+                                </div>
+                            }
+                        }
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:0;">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    @{
+                            for (int i = 1; i < baiviets.Count; i++)
+                            {
+                                BaiViet b2 = baiviets.ElementAt(i);
+                            <div class="col-sm-4" style="padding-left:0px;">
+                                <div class="row" style="color: #a4a2a2;font-size: 20px;margin:0;line-height:25px;">
+                                    <a href="/baiviet/@b2.id">
+                                        <img src="@b2.image" class="img-responsive" style="width:100%;margin:20px 0;">
+                                    </a>
+                                    <a href="/baiviet/@b2.id" style="color:#f47a22;text-decoration:none;">
+                                        <h3 style="margin-bottom: 20px;margin-top: 0px;font-weight: 600;font-size: 18px;">
+                                            <i>@b2.title</i>
+                                        </h3>
+                                    </a>
+                                    <em style="font-size:14px;font-weight:normal;">
+                                        @b2.description			    					<br>
+                                        <span style="float:right;"> <b>... <a href="/baiviet/@b2.id">xem thêm</a></b></span><b>
+                                        </b>
+                                    </em><b>
+                                    </b>
+                                </div><b>
+                                </b>
+                            </div>
+                            }
+                     }
+
+
+                </div><b>
+                    <b>
+                        <b>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+
+                            </div>
+                        </b>
+                    </b>
+                </b>
+            </div><b>
+                <b>
+                    <b>
+                    </b>
+                </b>
+            </b>
+        </div><b>
+            <b>
+                <b>
+                </b>
+            </b>
+        </b>
+    </div><b>
+        <b>
+            <b>
+            </b>
+        </b>
+    </b>
+</div>

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Quản lí - Về chúng tôi";
+    ViewBag.notRenderMenu = true;
+
+}
+@using (Html.BeginForm("saveVechungtoi", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+<div>
+    <label>1. Về chúng tôi</label>
+    <textarea name="vechungtoi" id="editor1" rows="10" cols="80">@ViewBag.text_vechungtoi</textarea>
+</div>
+<div>
+    <label>2. Tầm nhìn sứ mệnh</label>
+    <textarea name="tamnhinsumenh" id="editor2" rows="10" cols="80">@ViewBag.text_tamnhinsumenh</textarea>
+</div>
+<div>
+    <label>3. Tại sao lại chọn chúng tôi</label>
+    <textarea name="taisaolaichon" id="editor3" rows="10" cols="80">@ViewBag.text_taisaolaichon</textarea>
+</div>
+    <input class="btn btn-success" type="submit" value="Save change"/>
+}
+<script>
+    CKEDITOR.replace('editor1');
+    CKEDITOR.replace('editor2');
+    CKEDITOR.replace('editor3');
+
+</script>

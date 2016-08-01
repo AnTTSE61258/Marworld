@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="marworlddbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BaiViet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="image" Type="nvarchar" MaxLength="1000" />
+    <Property Name="detail" Type="nvarchar(max)" />
+    <Property Name="category" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Camnhan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="3000" />
+    <Property Name="camnhan" Type="nvarchar(max)" />
+    <Property Name="doituong" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="picture" Type="nvarchar" MaxLength="500" />
+    <Property Name="lithuyet" Type="int" />
+    <Property Name="casestudy" Type="int" />
+    <Property Name="workshop" Type="int" />
+    <Property Name="address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="thoiluong" Type="int" />
+    <Property Name="khaigiang" Type="date" />
+    <Property Name="hocphi" Type="float" />
+    <Property Name="thoigianhoc" Type="nvarchar" MaxLength="200" />
+    <Property Name="handangki" Type="date" />
+    <Property Name="noichung" Type="nvarchar(max)" />
+    <Property Name="doituong" Type="nvarchar(max)" />
+    <Property Name="ghichu" Type="nvarchar(max)" />
+    <Property Name="gioithieu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CustomImage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imageCategory" Type="nvarchar" MaxLength="500" />
+    <Property Name="imageURL" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="StringConstant">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="300" />
+    <Property Name="value" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Tailieu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2000" />
+    <Property Name="authorname" Type="nvarchar" MaxLength="2000" />
+    <Property Name="company" Type="nvarchar" MaxLength="2000" />
+    <Property Name="loimodau" Type="nvarchar" MaxLength="2000" />
+    <Property Name="gioithieuchung" Type="nvarchar" MaxLength="2000" />
+    <Property Name="fileURL" Type="nvarchar" MaxLength="2000" />
+    <Property Name="imageUrl" Type="nvarchar" MaxLength="2000" />
+    <Property Name="noidung" Type="nvarchar(max)" />
+    <Property Name="authorURL" Type="nvarchar(max)" />
+    <Property Name="category" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="200" />
+    <Property Name="congty" Type="nvarchar(max)" />
+    <Property Name="caunoi" Type="nvarchar(max)" />
+    <Property Name="gioithieu" Type="nvarchar(max)" />
+    <Property Name="picture" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="marworlddbModelStoreContainer">
+    <EntitySet Name="BaiViet" EntityType="Self.BaiViet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Camnhan" EntityType="Self.Camnhan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomImage" EntityType="Self.CustomImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StringConstant" EntityType="Self.StringConstant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tailieu" EntityType="Self.Tailieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

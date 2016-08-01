@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Lịch khai giảng";
+    List<Course> courses = ViewBag.courses;
+    if(courses == null)
+    {
+        courses = new List<Course>();
+    }
+    DateTime current = DateTime.Now;
+
+}
+<img src="~/Content/Template/Slider/slide1.png" style="width:100%;height:auto" />
+<div class="container" style="margin-top:20px">
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th>KHÓA HỌC</th>
+                <th>THỜI GIAN HỌC</th>
+                <th>THỜI LƯỢNG</th>
+                <th>HỌC PHÍ</th>
+                <th>ĐỊA ĐIỂM</th>
+                <th>NGÀY KHAI GIÀNG</th>
+                <th>CHI TIẾT</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                for (int i = 0; i < courses.Count; i++)
+                {
+                    Course c = courses.ElementAt(i);
+                    <tr>
+                        <td style="color:#f47a22;text-decoration:none;margin:10px 0;width:30%"><h4>@c.name</h4></td>
+                        <td>@c.thoigianhoc</td>
+                        <td>@c.thoiluong buổi</td>
+                        <td>@SLIMCONFIG.convertToCurrency(c.hocphi.ToString()) đ </td>
+                        <td>@c.address</td>
+                        <td>
+                            @{
+                                if (c.khaigiang.GetValueOrDefault().Month == current.Month && c.khaigiang.GetValueOrDefault().Year == current.Year)
+                                {
+                                    <p class="btn btn-success">
+                                        @c.khaigiang.GetValueOrDefault().ToString("dd-MM-yyyy")
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p class="btn btn-default">
+                                        @c.khaigiang.GetValueOrDefault().ToString("dd-MM-yyyy")
+                                    </p>
+                                }
+                            }
+                        </td>
+                        <td><a href="/khoahoc/@c.id">Xem chi tiết </a> </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>

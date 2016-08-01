@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Cơ hội nghề nghiệp";
+    List<CustomImage> customImages = ViewBag.headerImage;
+}
+<div class="">
+    @{
+        CustomImage header = customImages.LastOrDefault();
+        if (header != null)
+        {
+            <img src="@header.imageURL" style="width:100%;height:auto" />
+        }
+    }
+</div>
+<div class="row container">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+        @Html.Raw(ViewBag.text_cohoinghenghiep)
+
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+
+
+</div>

@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Chi tiết môn học";
+    Course c = ViewBag.course;
+    List<Teacher> allTeachers = ViewBag.allteachers;
+}
+<div class="container" style="margin-top:20px">
+
+    <div class="container-fluid" style="margin:0 0 30px;padding:0;">
+        <img src="@c.picture" class="img-responsive" style="width:100%;">
+    </div>
+    <div class="container-fluid" style="margin:30px 0 80px;">
+        <div class="container" style="box-shadow:inset 0 2px 2px rgba(255,255,255,.15),0 2px 2px rgba(0,0,0,.075)">
+            <div class="row" style="margin:10px 0;">
+                <div class="row" style="margin:0;">
+                    <div class="col-sm-6" style="padding:0;">
+                        <div class="row" style="color: #5a5a5c;font-size: 30px;font-weight: 600;margin:0;">KHOÁ HỌC</div>
+                        <div class="row" style="color: #f47a22;font-size: 25px;font-weight: 600;margin:0;line-height:60px;">@c.name</div>
+                        <div class="row" style="color: #a4a2a2;font-size: 30px;font-weight: 600;margin:0;line-height:50px;">OVERVIEW &amp; FUNDAMENTAL</div>
+                        <div class="row" style="margin:10px 0;color: #a4a2a2;font-size: 21px;line-height:25px;">
+                            <div class="crop">
+                                @c.gioithieu
+                            </div>
+                            <br />
+
+                            <div class="row" style="margin:0;">
+                                * Cách thức giảng dạy tại MarWorld
+                            </div><br><br>
+                            <div class="row" style="margin:0;color:#333;">
+                                <div class="col-sm-4" style="padding:0;">
+                                    <div class="lon" style="font-size:xx-large;font-weight:600">@c.lithuyet</div><br>
+                                    <div class="nho">LÝ THUYẾT</div>
+                                </div>
+                                <div class="col-sm-4" style="padding:0;">
+                                    <div class="lon" style="font-size:xx-large;font-weight:600">@c.casestudy</div><br>
+                                    <div class="nho">CASE STUDY</div>
+                                </div>
+                                <div class="col-sm-4" style="padding:0;">
+                                    <div class="lon" style="font-size:xx-large;font-weight:600">@c.workshop</div><br>
+                                    <div class="nho">WORKSHOP</div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="row" style="margin:0;background:#494545;padding:10px;color:#fff;">
+                                <div class="col-sm-6" style="font-size: 16px;font-weight: 600;padding:0;">
+                                    THÔNG TIN KHOÁ HỌC
+                                </div>
+                                <div class="col-sm-6" style="text-align:right;font-size:14px;">
+                                    Tổng thời lượng: @c.thoiluong buổi
+                                </div>
+                            </div>
+                            <div class="row" style="margin:0;color:#8c8c8c;">
+                                <table class="table table-hover" style="color:#8c8c8c;">
+                                    <tbody>
+                                        <tr>
+                                            <th style="vertical-align:middle;">KHAI GIẢNG</th>
+                                            <td style="vertical-align:middle;">@c.khaigiang.GetValueOrDefault().ToString("dd-MM-yyyy")</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="vertical-align:middle;">HỌC PHÍ</th>
+                                            <td style="vertical-align:middle;">@c.hocphi đ</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="vertical-align:middle;">THỜI GIAN</th>
+                                            <td style="vertical-align:middle;">Thứ 2-4-6, 18H-21H</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="vertical-align:middle;">HẠN ĐĂNG KÍ</th>
+                                            <td style="vertical-align:middle;">@c.handangki.GetValueOrDefault().ToString("dd-MM-yyyy")</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul id="nav1" class="nav nav-tabs" role="tablist" style="border:none;">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">NỘI DUNG <br>KHOÁ HỌC</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ĐỐI TƯỢNG <br>KHOÁ HỌC</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home" style="padding:10px;">
+                                <div class="tab-pane active" id="home" style="padding:10px;">
+                                    <div class="tab-content">
+                                        @Html.Raw(c.noichung)
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="profile" style="padding:10px;">
+                                <div class="tab-pane active" id="home" style="padding:10px;">
+                                    <div class="tab-content">
+                                        @Html.Raw(c.doituong)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin:30px 0 80px;">
+        <div class="container">
+            <div class="row" style="margin:0;">
+                <div class="row" style="color: #5a5a5c;font-size: 30px;font-weight: 600;margin:0;">GIỚI THIỆU</div>
+                <div class="row" style="color: #333;font-size: 50px;font-weight: 600;margin:0;line-height:60px;">GIẢNG VIÊN CHUYÊN GIA</div>
+                <div class="row" style="color: #a4a2a2;font-size: 30px;font-weight: 600;margin:0;line-height:50px;">MARKETING &amp; KINH DOANH</div>
+            </div>
+            <hr style="border-bottom:4px solid #d6d6d6;margin: 10px 0 20px;">
+            @for (int i = 0; i < allTeachers.Count; i += 3)
+            {
+                <div class="row" style="margin:20px">
+                    @for (int j = i; j < i + 3 && j < allTeachers.Count; j++)
+                {
+                    Teacher t = allTeachers.ElementAt(j);
+
+                        <div class="col-sm-4">
+                            <div class="col-sm-6" style="padding:0;">
+                                <a href="#" data-toggle="modal" data-target="#modal_@t.id">
+                                    <img src="@t.picture" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="col-sm-6" style="font-size: 17px;color: #a4a2a2;font-weight: 600;">
+                                <a href="#" data-toggle="modal" data-target="#modal_@t.id">
+                                    <h3 style="color:#f47a22;font-weight: 600;margin-top:0;white-space:nowrap">@t.name </h3>
+                                </a>
+                                @t.congty
+                            </div>
+                        </div>
+
+                    }
+
+
+                </div>
+            }
+        </div>
+    </div>
+
+    <a class="btn btn-default btn-lg" href="/Khoahoc" style="margin-left:7%;color:#f47a22">Quay lại</a> 
+</div>

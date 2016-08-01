@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.title = "Liên hệ";
+    List<Course> courses = ViewBag.course;
+}
+<div class="container-fluid" style="margin:50px 0;">
+    <div class="container">
+        <div class="col-sm-6" style="padding:0px;">
+            <div class="row" style="color: #5a5a5c;font-size: 36px;font-weight: 600;margin:0;">LIÊN HỆ</div>
+            <div class="row" style="color: #363636;font-size: 55px;font-weight: 600;margin:0;line-height: 60px;letter-spacing: 5px;">MARWORLD</div>
+            <div class="row" style="color: #a4a2a2;font-size: 36px;font-weight: 600;margin:0;line-height:50px;">TRỰC TIẾP VỚI CHÚNG TÔI</div>
+            <div class="row" style="color: #a4a2a2;font-size: 21px;margin:0;line-height:30px;">
+                Chi nhánh 1: 41 Lê Văn Huân, Phường 15, Quận Tân Bình, TP.HCM <br>
+                Chi nhánh 2: 35 Nguyễn Thông , Phường 7, Quận 3, TP.HCM
+            </div>
+            <div class="row" style="margin:10px 0;color: #f26b23;font-size: 30px;font-weight: 600;">
+                (+84) 1800 1960<br>
+                INFO@MARWORLD.COM.VN<br>
+                WWW.MARWORLD.COM.VN
+            </div>
+        </div>
+        <div class="col-sm-6" style="box-shadow:inset 0 2px 0 rgba(255,255,255,.15),0 2px 5px rgba(0,0,0,.075);padding:10px;">
+            <div class="row" style="margin:0;color:#fff;">
+                <div class="google-maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4381912626272!2d106.6822533144858!3d10.777712262117861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f25a2b08f83%3A0xcde4d4164374fd6b!2zMzUgTmd1eeG7hW4gVGjDtG5nLCBwaMaw4budbmcgNywgUXXhuq1uIDMsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1457982547138" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                 </div>
+        </div>
+    </div>
+    <hr>
+        <div class="container">
+            <div class="row">
+                <div style="margin:10px 0;color: #f26b23;font-size: 30px;font-weight: 600;" class="row">
+                    HÃY GỬI THÔNG TIN CỦA BẠN ĐẾN CHÚNG TÔI
+                </div>
+                <div class="col-md-8" style="float:none;margin: 0 auto;">
+                    <form action="" method="post" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputEmail3">Họ tên</label>
+                            <div class="col-sm-10"> <input type="text" name="contact_user_firstname" placeholder="Họ tên" id="inputEmail3" class="form-control"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputEmail3">Email</label>
+                            <div class="col-sm-10"> <input type="email" name="contact_user_email" placeholder="Email" id="inputEmail3" class="form-control"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Khóa học</label>
+                            <div class="col-sm-10">
+                                <select class="form-control">
+                                    @{ 
+                                        foreach (Course c in courses)
+                                        {
+                                            <option value="@c.id">@c.name</option>
+                                        }
+                                    }
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputEmail3">Số điện thoại</label>
+                            <div class="col-sm-10"> <input type="text" name="contact_user_mobile" placeholder="Số điện thoại" id="inputEmail3" class="form-control"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputEmail3">Nội dung đăng kí</label>
+                            <div class="col-sm-10"> <textarea name="contact_user_message" placeholder="Nội dung đăng kí" class="form-control"></textarea> </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputEmail3"></label>
+                            <div class="col-sm-10"> <button class="btn btn-success">Đồng ý</button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+</div>

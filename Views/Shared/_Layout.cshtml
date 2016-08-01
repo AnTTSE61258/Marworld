@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/Favicon32x32.png" rel="shortcut icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("head",false)
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Content/CkEditor/ckeditor.js"></script>
+
+    <style type="text/css">
+        @@font-face {
+            font-family: 'Clearsans';
+            src: url('/Content/font/clearsans-regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @@font-face {
+            font-family: 'Clearsans';
+            src: url('/Content/font/clearsans-italic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        @@font-face {
+            font-family: 'Clearsans';
+            src: url('/Content/font/clearsans-bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @@font-face {
+            font-family: 'Clearsans';
+            src: url('/Content/font/clearsans-bolditalic.ttf') format('truetype');
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .body {
+            font-family: 'Clearsans';
+        }
+
+        a, h1, h2, h3, h4, h5, h6, div {
+            font-family: 'Clearsans';
+        }
+
+        .inputsearch {
+            width: 100%;
+            padding-left: 42.5px;
+            padding-right: 0px;
+            border-radius: 15px;
+            background: #f7f7f7;
+            border: none;
+            box-shadow: none;
+        }
+
+        .language {
+            padding: 0px;
+            margin-top: 33px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .navbar-default {
+            box-shadow: none;
+            border-color: #fff;
+        }
+
+        .language a {
+            text-decoration: none;
+            color: #8d8a8a;
+            font-weight: bold;
+        }
+
+            .language a:hover {
+                color: #f47a22;
+            }
+
+        .carousel-indicators .active {
+            width: 20px;
+            height: 20px;
+            background-color: #f16625;
+            border: none;
+        }
+
+        .carousel-indicators li {
+            width: 20px;
+            height: 20px;
+            margin: 0px 5px;
+            background: #7b7978;
+            border: none;
+        }
+
+        .carousel-indicators {
+            width: 75%;
+        }
+
+        .nav > li > a:hover {
+            text-decoration: none;
+            background-color: #fff;
+            border-bottom: 2px solid #f26b23;
+            color: #f26b23 !important;
+        }
+
+        .buttonorange {
+            background: #f47a22;
+            color: #fff;
+            padding: 20px;
+            margin: 15px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 0px;
+        }
+
+        .buttonwhite {
+            background: #fff;
+            opacity: 0.9;
+            font-size: 20px;
+            border: none;
+            border-radius: 0px;
+            width: 300px;
+            padding: 10px;
+            color: #f26b23;
+            font-weight: 600;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .buttonsocial {
+            background: #f26b23;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            line-height: 50px;
+            border-radius: 50%;
+            color: #1d1d1d;
+            text-align: center;
+        }
+
+            .buttonsocial:hover {
+                background: #1d1d1d;
+                color: #f26b23;
+            }
+
+        .flex-prev {
+            display: none !important;
+        }
+
+        #nav1.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            color: #fff;
+            cursor: default;
+            background-color: #363636;
+            border: 1px solid #ddd;
+            border-bottom-color: transparent;
+        }
+
+        #nav1.nav-tabs > li > a {
+            margin-right: 0px;
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+            border-radius: 4px 4px 0 0;
+            background: #f2f2f2;
+            color: #333;
+            font-size: 16px;
+        }
+
+        #nav2.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            color: #f47a22;
+            cursor: default;
+            background-color: #fff;
+            border-bottom-color: transparent;
+            font-size: 20px;
+            border-bottom: 2px solid #f47a22;
+        }
+
+        #nav2.nav-tabs > li > a {
+            margin-right: 0px;
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+            border-radius: 4px 4px 0 0;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+    <meta name="google-site-verification" content="T11dzhH8JwY-_0Y5cqePNQwG44fvRSidJ1dOE9a0-q8" />
+</head>
+<body style="padding:0">
+    
+        @if (ViewBag.notrendermenu == true)
+        {
+
+        }
+        else
+        {
+            @Html.Partial("Menu")
+
+        }
+
+    <div>
+        @RenderBody()
+       
+    </div>
+    <hr />
+
+@if (ViewBag.notrendermenu == true)
+{
+
+}
+else
+{
+    <footer>
+        <div class="container-fluid" style="margin:30px 0 0;padding:30px 0 50px;background:#282828;">
+            <div class="container">
+                <div class="col-sm-6" style="padding-left:0;">
+                    <div class="row" style="margin:0;font-size: 20px;color: #aba6a6;">
+                        VĂN PHÒNG CHÍNH
+                    </div>
+                    <div class="row" style="margin:0;font-size:16px;color:#aba6a6;line-height: 25px;font-weight: normal;">
+                        <i><b style="color: #f26b23;">Chi nhánh 1: </b>41 Lê Văn Huân, Phường .3, Quận Tân Bình, TP.HCM</i><br>
+                        <i><b style="color: #f26b23;">Chi nhánh 2: </b>35 Nguyễn Thông , Phường 7, Quận 3, TP.HCM</i><br>
+                        <i>PHONE: (+84) 6652. 2468   |  PHONE: (+84) 90.39.39.089</i><br />
+                        <i>EMAIL: info@marworld.edu.vn</i>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="padding-left:0;">
+                    <div class="row" style="margin:0;text-align:right;">
+                        <img src="~/Content/Template/logofooter.png" class="img-responsive" style="display:inline;margin-right:10px;" />&nbsp;
+                        <a href="#"><i class="fa fa-facebook buttonsocial"></i></a>&nbsp;
+                        <a href="#"><i class="fa fa-twitter buttonsocial"></i></a>&nbsp;
+                        <a href="#"><i class="fa fa-pinterest buttonsocial"></i></a>&nbsp;
+                        <a href="#"><i class="fa fa-google-plus buttonsocial"></i></a>&nbsp;
+                    </div>
+                    <div class="row" style="margin: 20px 0 10px;text-align:right;color: #f26b23;font-size: 16px;">
+                        © 2015 Marworld Inc. All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+}
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryflexslider")
+    @RenderSection("scripts", required: false)
+    <script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",38647]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script>
+</body>
+</html>

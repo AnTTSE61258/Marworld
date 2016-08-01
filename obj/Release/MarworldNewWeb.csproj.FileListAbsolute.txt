@@ -1,0 +1,162 @@
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\csc.exe
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\System.Collections.Immutable.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\System.Reflection.Metadata.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\vbc.exe
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\VBCSCompiler.exe
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\roslyn\VBCSCompiler.exe.config
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\MarworldNewWeb.dll.config
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\MarworldNewWeb.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\MarworldNewWeb.pdb
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Antlr3.Runtime.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.SqlServer.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.Agent.Intercept.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.DependencyCollector.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.PerfCounterCollector.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.ServerTelemetryChannel.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.Web.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.WindowsServer.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.ApplicationInsights.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Core.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Cookies.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Facebook.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Google.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.OAuth.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Twitter.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Web.Infrastructure.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Newtonsoft.Json.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Owin.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Helpers.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Mvc.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Optimization.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Razor.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Deployment.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Razor.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\WebGrease.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.DependencyCollector.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.ServerTelemetryChannel.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.Web.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.WindowsServer.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.ApplicationInsights.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Helpers.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Mvc.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Optimization.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Razor.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Deployment.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Razor.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Antlr3.Runtime.pdb
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Newtonsoft.Json.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.SqlServer.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Core.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Facebook.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Cookies.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.OAuth.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Google.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Twitter.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\obj\Release\MarworldNewWeb.dll
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\obj\Release\MarworldNewWeb.pdb
+\\mac\home\documents\visual studio 2015\Projects\MarworldNewWeb\MarworldNewWeb\obj\Release\MarworldNewWeb.csprojResolveAssemblyReference.cache
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\csc.exe
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\System.Collections.Immutable.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\System.Reflection.Metadata.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\vbc.exe
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\VBCSCompiler.exe
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\roslyn\VBCSCompiler.exe.config
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\MarworldNewWeb.dll.config
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\MarworldNewWeb.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\MarworldNewWeb.pdb
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Antlr3.Runtime.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.SqlServer.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.Agent.Intercept.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.DependencyCollector.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.PerfCounterCollector.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.ServerTelemetryChannel.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.Web.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.WindowsServer.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.ApplicationInsights.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Core.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Cookies.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Facebook.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Google.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.OAuth.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Twitter.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Web.Infrastructure.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Newtonsoft.Json.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Owin.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Helpers.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Mvc.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Optimization.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Razor.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Deployment.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Razor.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\WebGrease.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.DependencyCollector.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.ServerTelemetryChannel.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.Web.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AI.WindowsServer.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.ApplicationInsights.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Helpers.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Mvc.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Optimization.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.Razor.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Deployment.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\System.Web.WebPages.Razor.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Antlr3.Runtime.pdb
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Newtonsoft.Json.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\EntityFramework.SqlServer.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Core.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Facebook.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Cookies.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.OAuth.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Google.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.Twitter.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\obj\Release\MarworldNewWeb.csprojResolveAssemblyReference.cache
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\obj\Release\MarworldNewWeb.dll
+\\Mac\Home\Downloads\Backup 26_4\MarworldNewWeb\MarworldNewWeb\obj\Release\MarworldNewWeb.pdb

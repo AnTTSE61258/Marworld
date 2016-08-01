@@ -1,0 +1,129 @@
+﻿
+@{
+    Tailieu t = ViewBag.tailieu;
+    if (t != null)
+    {
+        ViewBag.Title = @t.name;
+    }
+}
+<div class="container-fluid" style="margin:30px 0 100px;">
+    <div class="container">
+        <div class="row" style="margin:10px 0;">
+            <div class="row" style="padding:0px;margin:0;">
+                <div class="row" style="color: #5a5a5c;font-size: 30px;font-weight: 600;margin:0;">TRAO DỒI KIẾN THỨC VỚI</div>
+                <div class="row" style="color: #363636;font-size: 50px;font-weight: 600;margin:0;line-height:55px;">TRAO DỒI KIẾN THỨC VỚI</div>
+                <div class="row" style="color: #a4a2a2;font-size: 30px;font-weight: 600;margin:0;line-height:50px;">BUSINESS &amp; MARKETING</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row" style="margin:0;color: #a4a2a2;font-size: 21px;margin:0;line-height:25px;">
+                            @ViewBag.tailieutext
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row" style="margin:0;">
+                        <form class="navbar-form" style="margin-top:0px;">
+                            <div class="form-group has-feedback" style="width:100%;">
+                                <input type="text" class="form-control inputsearch" value="Nhập từ khoá tìm kiếm ....." style="width:100%;background:#f26c23;color:#fff;float:right">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" style="margin:0;padding: 0 17px;">
+                        <ul id="nav3" class="nav nav-tabs" style="border:none;float:right;">
+                            <li role="presentation"><a href="/tailieu?cat=thuonghieu" class="btn buttonorange" style="text-decoration: none;">Thương hiệu</a></li>
+
+                            <li role="presentation"><a href="/tailieu?cat=marketing" class="btn buttonorange" style="text-decoration: none;">Marketing</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:30px 0 0;">
+            <div class="col-sm-4" style="padding-left:0;">
+                <img src="@t.imageUrl" class="img-responsive">
+                <div class="row" style="margin:10px 0;padding:0 30px;color:#f47a22;">
+                    <h3 style="margin: 0px;font-size: 16px;font-weight: 600;">
+                        @{ 
+                            if (SLIMCONFIG.tailieu_category_marketing.Equals(t.category))
+                            {
+                                <span>Tài liệu marketing</span>
+                            }
+                            if (SLIMCONFIG.tailieu_category_thuonghieu.Equals(t.category))
+                            {
+                                <span>Tài liệu thương hiệu</span>
+                            }
+                        }
+
+                    </h3>
+                    <hr style="margin:10px 0;">
+                    <div class="col-sm-12" style="padding:0px;font-size:12px;color:#333;">
+                        <!--                        <div class="row" style="margin:0;">
+                                                    <div class="col-sm-6" style="padding:0px;">
+                                                        <b>TÁC GIẢ: </b> JOHN SMITH
+                                                    </div>
+                                                    <div class="col-sm-6" style="padding:0px;">
+                                                        <b>NGÔN NGỮ: </b> ANH VIỆT
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin:5px 0;">
+                                                    KIẾN THỨC CĂN BẢN VỂ MARKETING ỨNG DỤNG
+                                                </div>-->
+                        <div class="row">
+                            <center>
+                                <form method="get" action="@t.fileURL">
+                                    <button type="submit" class="btn buttonorange">Download!</button>
+                                </form>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin:50px 0 20px;">
+                    <div class="col-sm-12">
+                        <div class="row" style="margin:50px 0 20px;">
+                            <div class="col-sm-12">
+                                <div class="col-sm-4" style="padding:0;"><img class="img-responsive" src="@t.authorURL"></div>
+
+                                <div class="col-sm-8" style="font-size: 17px;color: #a4a2a2;font-weight: 600;">
+                                    <div style="color:#333;font-size: 18px;">TÁC GIẢ TÀI LIỆU</div>
+
+                                    <hr>
+                                    <div style="color:#f26b23;margin-top: 10px;font-size: 18px;">@t.authorname</div>
+
+                                    <div style="font-size:16px;">
+                                        <em>
+                                            @t.company
+                                        </em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin:30px 0;">
+                            <div class="col-sm-12">
+                                <div style="color:#333;font-size: 18px;margin-bottom:10px;">LỜI MỞ ĐẦU</div>
+
+                                <p><em>@t.loimodau </em></p>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin:30px 0;">
+                            <div class="col-sm-12">
+                                <div style="color:#333;font-size: 18px;margin-bottom:10px;">GIỚI THIỆU CHUNG</div>
+
+                                <p>
+                                   @t.gioithieuchung
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8" style="font-size:20px;color:#a3a1a2;line-height:30px;">
+                <div class="col-sm-8" style="font-size:20px;color:#a3a1a2;line-height:30px;">
+                    @Html.Raw(t.noidung)   
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

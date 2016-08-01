@@ -1,0 +1,201 @@
+﻿
+@{
+    ViewBag.Title = "Camnhan";
+    List<Camnhan> camnhans = ViewBag.allCamnhan;
+    List<CustomImage> customeImages = ViewBag.allCustomImages;
+    ViewBag.notRenderMenu = true;
+
+}
+<script>
+    var allCommentJavascript;
+</script>
+
+<div class="container row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("savecamnhan", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input id="id" name="id" class="form-control" type="hidden" />
+            <label>Tên</label>
+            <input id="name" name="name" class="form-control"></input>
+            <label>Comment</label>
+            <input id="comment" name="camnhan" class="form-control"></input>
+            <label>Đối tượng</label>
+            <select class="form-control" name="doituong" id="doituong">
+                <option value="@SLIMCONFIG.select_sinhvien">Sinh viên</option>
+                <option value="@SLIMCONFIG.select_doanhnghiep">Doanh nghiệp</option>
+
+            </select>
+            <input id="btnthemcamnhan" type="submit" class="btn btn-success" value="Thêm cảm nhận"/>
+        }
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Nội dung</th>
+                    <th>Doituong</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    for (int i = 0; i < camnhans.Count; i++)
+                    {
+                        Camnhan c = camnhans.ElementAt(i);
+                        <tr>
+                            <td>@i 
+                            <button class="btn btn-default" onclick="loadEditData(@i)">Edit</button>
+                            </td>
+                            <td>@c.name</td>
+                            <td>@c.camnhan1</td>
+                            <td>@{
+                                if (SLIMCONFIG.select_sinhvien.Equals(c.doituong))
+                                {
+                                    <p> Sinh viên </p>
+                                }
+                                else
+                                {
+                                    <p> Doanh nghiệp</p>
+                                }
+
+                            }</td>
+                            <td><button class="btn btn-danger" onclick="deleteCamnhan(@c.id)">Delete</button></td>
+                          </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+       
+    </div>
+</div>
+<div class="container" >
+    <div class="col-md-4">
+        @using (Html.BeginForm("savecustomImage", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <h3> @ViewBag.customImageError</h3>
+
+            <input type="text" id="customImageId" name="customImageId" />
+            <label>ImageCategory</label>
+            <select class="form-control" id="imageCategory" name="ImageCategory">
+                <option value="@SLIMCONFIG.customImage_category_camnhan">Image cảm nhận</option>
+                <option value="@SLIMCONFIG.customImage_background">Hình phía trên của Giáo trình - cơ hội</option>
+            </select>
+            <input type="file" name="file" />
+            <input type="submit" class="btn btn-success" id="btn_savecustomImage" />
+        }
+ 
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    for(int i = 0; i < customeImages.Count; i++)
+                    {
+                        CustomImage c = customeImages.ElementAt(i);
+                        if (c != null)
+                        {
+                            <tr>
+                                <td>@c.id</td>
+                                <td>@c.imageCategory</td>
+                                <td>
+                                    <img alt="Picture" src="@c.imageURL" style="width:200px;height:auto" />
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="deleteCustomImage(@c.id)">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+   
+   
+</div>
+
+<script>
+    function deleteCustomImage(id){
+        $.ajax({
+            url: '/Quanli/deleteCustomImage',
+            data: {
+                id:id
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+
+            },
+            type: 'POST'
+        });
+    }
+
+    function loadEditData(id){
+        var camnhan = allCommentJavascript[id];
+     //   alert(camnhan)
+        $("#id").val(camnhan["id"])
+        $("#name").val(camnhan["name"])
+        $("#comment").val(camnhan["camnhan1"])
+        $("#doituong").val(camnhan["doituong"])
+        $("#btnthemcamnhan").val("Update comment")
+    }
+
+    function deleteCamnhan(id){
+        $.ajax({
+            url: '/Quanli/DeleteComment',
+            data: {
+                id:id
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+
+            },
+            type: 'POST'
+        });
+    }
+
+    function loadListComment() {
+        $.ajax({
+            url: '/Quanli/AllCamnhan',
+            data: {
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                //alert(data)
+                var obj = JSON.parse(data);
+                allCommentJavascript = obj;
+
+            },
+            type: 'GET'
+        });
+    }
+
+    $(document).ready(function () {
+        console.log("document loaded");
+        loadListComment();
+    });
+
+</script>

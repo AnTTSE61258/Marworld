@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="marworlddbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BaiViet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="image" Type="nvarchar" MaxLength="1000" />
+          <Property Name="detail" Type="nvarchar(max)" />
+          <Property Name="category" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Camnhan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="3000" />
+          <Property Name="camnhan" Type="nvarchar(max)" />
+          <Property Name="doituong" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="picture" Type="nvarchar" MaxLength="500" />
+          <Property Name="lithuyet" Type="int" />
+          <Property Name="casestudy" Type="int" />
+          <Property Name="workshop" Type="int" />
+          <Property Name="address" Type="nvarchar" MaxLength="1000" />
+          <Property Name="thoiluong" Type="int" />
+          <Property Name="khaigiang" Type="date" />
+          <Property Name="hocphi" Type="float" />
+          <Property Name="thoigianhoc" Type="nvarchar" MaxLength="200" />
+          <Property Name="handangki" Type="date" />
+          <Property Name="noichung" Type="nvarchar(max)" />
+          <Property Name="doituong" Type="nvarchar(max)" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+          <Property Name="gioithieu" Type="nvarchar(max)" />
+          <Property Name="showOnSlider" Type="bit" />
+        </EntityType>
+        <EntityType Name="CustomImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imageCategory" Type="nvarchar" MaxLength="500" />
+          <Property Name="imageURL" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="StringConstant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="300" />
+          <Property Name="value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Tailieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="2000" />
+          <Property Name="authorname" Type="nvarchar" MaxLength="2000" />
+          <Property Name="company" Type="nvarchar" MaxLength="2000" />
+          <Property Name="loimodau" Type="nvarchar" MaxLength="2000" />
+          <Property Name="gioithieuchung" Type="nvarchar" MaxLength="2000" />
+          <Property Name="fileURL" Type="nvarchar" MaxLength="2000" />
+          <Property Name="imageUrl" Type="nvarchar" MaxLength="2000" />
+          <Property Name="noidung" Type="nvarchar(max)" />
+          <Property Name="authorURL" Type="nvarchar(max)" />
+          <Property Name="category" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+          <Property Name="congty" Type="nvarchar(max)" />
+          <Property Name="caunoi" Type="nvarchar(max)" />
+          <Property Name="gioithieu" Type="nvarchar(max)" />
+          <Property Name="picture" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TeacherInCourse">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="courseId" Type="int" />
+          <Property Name="teacherid" Type="int" />
+        </EntityType>
+        <EntityContainer Name="marworlddbModelStoreContainer">
+          <EntitySet Name="BaiViet" EntityType="Self.BaiViet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Camnhan" EntityType="Self.Camnhan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomImage" EntityType="Self.CustomImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StringConstant" EntityType="Self.StringConstant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tailieu" EntityType="Self.Tailieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeacherInCourse" EntityType="Self.TeacherInCourse" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="marworlddbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="StringConstant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="marworlddbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="StringConstants" EntityType="Self.StringConstant" />
+          <EntitySet Name="Courses" EntityType="marworlddbModel.Course" />
+          <EntitySet Name="Teachers" EntityType="marworlddbModel.Teacher" />
+          <EntitySet Name="Camnhans" EntityType="marworlddbModel.Camnhan" />
+          <EntitySet Name="BaiViets" EntityType="marworlddbModel.BaiViet" />
+          <EntitySet Name="CustomImages" EntityType="marworlddbModel.CustomImage" />
+          <EntitySet Name="Tailieux" EntityType="marworlddbModel.Tailieu" />
+          <EntitySet Name="TeacherInCourses" EntityType="marworlddbModel.TeacherInCourse" />
+        </EntityContainer>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="picture" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="lithuyet" Type="Int32" />
+          <Property Name="casestudy" Type="Int32" />
+          <Property Name="workshop" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="thoiluong" Type="Int32" />
+          <Property Name="khaigiang" Type="DateTime" Precision="0" />
+          <Property Name="hocphi" Type="Double" />
+          <Property Name="thoigianhoc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="handangki" Type="DateTime" Precision="0" />
+          <Property Name="noichung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="doituong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="gioithieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="showOnSlider" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="congty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="caunoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="gioithieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Camnhan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="camnhan1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="doituong" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BaiViet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CustomImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imageCategory" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="imageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tailieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="authorname" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="company" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="loimodau" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="gioithieuchung" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="fileURL" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="imageUrl" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="authorURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TeacherInCourse">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="courseId" Type="Int32" />
+          <Property Name="teacherid" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="marworlddbModelStoreContainer" CdmEntityContainer="marworlddbEntities">
+          <EntitySetMapping Name="StringConstants">
+            <EntityTypeMapping TypeName="marworlddbModel.StringConstant">
+              <MappingFragment StoreEntitySet="StringConstant">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="marworlddbModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="showOnSlider" ColumnName="showOnSlider" />
+                <ScalarProperty Name="gioithieu" ColumnName="gioithieu" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="doituong" ColumnName="doituong" />
+                <ScalarProperty Name="noichung" ColumnName="noichung" />
+                <ScalarProperty Name="handangki" ColumnName="handangki" />
+                <ScalarProperty Name="thoigianhoc" ColumnName="thoigianhoc" />
+                <ScalarProperty Name="hocphi" ColumnName="hocphi" />
+                <ScalarProperty Name="khaigiang" ColumnName="khaigiang" />
+                <ScalarProperty Name="thoiluong" ColumnName="thoiluong" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="workshop" ColumnName="workshop" />
+                <ScalarProperty Name="casestudy" ColumnName="casestudy" />
+                <ScalarProperty Name="lithuyet" ColumnName="lithuyet" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teachers">
+            <EntityTypeMapping TypeName="marworlddbModel.Teacher">
+              <MappingFragment StoreEntitySet="Teacher">
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="gioithieu" ColumnName="gioithieu" />
+                <ScalarProperty Name="caunoi" ColumnName="caunoi" />
+                <ScalarProperty Name="congty" ColumnName="congty" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Camnhans">
+            <EntityTypeMapping TypeName="marworlddbModel.Camnhan">
+              <MappingFragment StoreEntitySet="Camnhan">
+                <ScalarProperty Name="doituong" ColumnName="doituong" />
+                <ScalarProperty Name="camnhan1" ColumnName="camnhan" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaiViets">
+            <EntityTypeMapping TypeName="marworlddbModel.BaiViet">
+              <MappingFragment StoreEntitySet="BaiViet">
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomImages">
+            <EntityTypeMapping TypeName="marworlddbModel.CustomImage">
+              <MappingFragment StoreEntitySet="CustomImage">
+                <ScalarProperty Name="imageURL" ColumnName="imageURL" />
+                <ScalarProperty Name="imageCategory" ColumnName="imageCategory" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tailieux">
+            <EntityTypeMapping TypeName="marworlddbModel.Tailieu">
+              <MappingFragment StoreEntitySet="Tailieu">
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="authorURL" ColumnName="authorURL" />
+                <ScalarProperty Name="noidung" ColumnName="noidung" />
+                <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+                <ScalarProperty Name="fileURL" ColumnName="fileURL" />
+                <ScalarProperty Name="gioithieuchung" ColumnName="gioithieuchung" />
+                <ScalarProperty Name="loimodau" ColumnName="loimodau" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="authorname" ColumnName="authorname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeacherInCourses">
+            <EntityTypeMapping TypeName="marworlddbModel.TeacherInCourse">
+              <MappingFragment StoreEntitySet="TeacherInCourse">
+                <ScalarProperty Name="teacherid" ColumnName="teacherid" />
+                <ScalarProperty Name="courseId" ColumnName="courseId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

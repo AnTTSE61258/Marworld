@@ -1,0 +1,288 @@
+﻿@using MarworldNewWeb.Service
+@{ 
+    List<Course> allCourses = ViewBag.allCourses;
+    ViewBag.notRenderMenu = true;
+    TeacherInCourseService _teacherInCourseService = new TeacherInCourseService();
+    TeacherService _teacherService = new TeacherService();
+    List<Teacher> allTeacher = _teacherService.getAll();
+    if (allTeacher == null)
+    {
+        allTeacher = new List<Teacher>();
+    }
+}
+<script>
+   var allcoursejavascript
+</script>
+<head>
+    <link href="~/Content/JQueryUI/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Content/JQueryUI/jquery-ui.js"></script>
+</head>
+<div class="container">
+    <p class="label-danger">@Html.Raw(ViewBag.e)</p>
+    @using (Html.BeginForm("addKhoaHoc", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-md-4" style="background-color:antiquewhite">
+                <div>
+                    <label>Tên khóa học</label>
+                    <input type="text" id="tenkhoahoc" name="tenkhoahoc" class="form-control" />
+                </div>
+
+                <div>
+                    <label id="labelHinhanhkhoahoc">Hình ảnh khóa học</label>
+                    <input class="form-control" type="file" name="file" />
+                </div>
+                <div>
+                    <label>Số tiết lí thuyết</label>
+                    <input id="lithuyet" class="form-control" type="number" name="lithuyet" />
+                </div>
+                <div>
+                    <label>Số tiết Case study</label>
+                    <input id="casestudy" class="form-control" type="number" name="casestudy" />
+                </div>
+                <div>
+                    <label>Số tiết workshop</label>
+                    <input id="workshop" class="form-control" type="number" name="workshop" />
+                </div>
+                <div>
+                    <label>Thời lượng</label>
+                    <input id="thoiluong" type="number" name="thoiluong" class="form-control" />
+                </div>
+                <div>
+                    <label>Địa chỉ học (Ex: Cơ sở I)</label>
+                    <input id="diachihoc" class="form-control" type="text" name="diachihoc" />
+                </div>
+
+            </div>
+            <div class="col-md-4" style="background-color:aquamarine">
+                <div>
+                    <label>Khai giảng</label>
+                    <input class="form-control" type="text" id="datepicker" name="khaigiang">
+                </div>
+                <div>
+                    <label>Học phí</label>
+                    <input id="hocphi" class="form-control" type="text" name="hocphi" />
+                </div>
+                <div>
+                    <label>Thời gian (Ex: 2-4-6)</label>
+                    <input id="thoigianhoc" class="form-control" type="text" name="thoigianhoc" />
+                </div>
+                <div>
+                    <label>Hạn đăng kí</label>
+                    <input class="form-control" type="text" id="datepicker2" name="handangki">
+                </div>
+                <div>
+                    <label>Ghi chú</label>
+                    <input class="form-control" type="text" id="ghichu" name="ghichu" />
+                </div>
+                <div>
+                    <label>Giới thiệu</label>
+                    <input class="form-control" type="text" id="gioithieu" name="gioithieu" />
+                </div>
+                <div>
+                    <label>Hiển thị lên slider</label>
+                    <input class="form-control" type="checkbox" id="isShowed" value="true" name="isShowed" />
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding:0px;">
+                <ul id="nav1" class="nav nav-tabs" role="tablist" style="border:none;">
+                    <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">NỘI DUNG</a></li>
+                    <li role="presentation"><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab">ĐỐI TƯỢNG</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="tab1">
+                        <textarea id="noidung" class="form-control" rows="10" name="noidung"></textarea>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab2">
+                        <textarea id="doituong" class="form-control" rows="10" name="doituong"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <input type="submit" value="Tạo mới khóa học" class="btn btn-success" id="btnSaveChange" style="width:100%" />
+
+    }
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>No</td>
+                    <td>Tên khóa học</td>
+                    <td>Hình ảnh</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    for (int i = 0; i < allCourses.Count; i++)
+                    {
+                        Course c = allCourses.ElementAt(i);
+                            <tr>
+                                <td>
+                                    @i
+                            </td>
+                            <td>
+                                @allCourses.ElementAt(i).name
+                            <button class="btn btn-default" onclick="edit('@i')">Edit</button>
+                        </td>
+                        <td>
+                            <img src="@allCourses.ElementAt(i).picture" style="width:100px;height:auto" />
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" onclick="deleteCourse('@allCourses.ElementAt(i).name')">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        List<Teacher> teachers = _teacherInCourseService.listTeacher(@c.id);
+                                        foreach (Teacher t in teachers)
+                                        {
+                                            <tr>
+                                                <td>@t.id</td>
+                                                <td>@t.name</td>
+                                                <td>
+                                                    @using (Html.BeginForm("deleteTeacherFromCourse", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                                    {
+                                                    <input type="hidden" name="teacherId" value="@t.id" />
+                                                    <input type="hidden" name="courseId" value="@c.id" />
+                                                    <input type="submit" class="btn btn-danger" value="Delete" />
+                                                    }
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    }
+                                    <tr>@using (Html.BeginForm("addTeacherToCourse", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <td>
+                                            <input type="hidden" name="courseId" value="@c.id" />
+                                        </td>
+                                        <td>
+                                            <select class="form-control" name="teacherId">
+                                               @{ 
+                                                   for (int j = 0; j < allTeacher.Count; j++)
+                                                   {
+                                                       <option value="@allTeacher.ElementAt(j).id">@allTeacher.ElementAt(j).name </option>
+                                                   }
+                                               }
+                                            </select>
+
+                                        </td>
+                                        <td>
+                                            <input class="btn btn-success" type="submit" value="Add" />
+                                        </td>
+                                      }
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+    
+<script>
+    CKEDITOR.replace('noidung');
+    CKEDITOR.replace('doituong');
+    function edit(i) {
+        $("#tenkhoahoc").val(allcoursejavascript[i]["name"]);
+        $("#labelHinhanhkhoahoc").html("Hình ảnh khóa học (Không chọn để giữ nguyên ảnh cũ)");
+        $("#lithuyet").val(allcoursejavascript[i]["lithuyet"]);
+        $("#casestudy").val(allcoursejavascript[i]["casestudy"]);
+        $("#workshop").val(allcoursejavascript[i]["workshop"]);
+        $("#thoiluong").val(allcoursejavascript[i]["thoiluong"]);
+        $("#diachihoc").val(allcoursejavascript[i]["address"]);
+        var parsedDate1 = new Date(allcoursejavascript[i]["khaigiang"]);
+        $("#datepicker").datepicker('setDate', parsedDate1);
+        $("#hocphi").val(allcoursejavascript[i]["hocphi"]);
+        $("#thoigianhoc").val(allcoursejavascript[i]["thoigianhoc"]);
+        var parsedDate = new Date(allcoursejavascript[i]["handangki"])
+        $("#datepicker2").datepicker('setDate', parsedDate);
+        $("#gioithieu").val(allcoursejavascript[i]["gioithieu"]);
+        if (allcoursejavascript[i]["showOnSlider"] === true) {
+            $("#isShowed").prop('checked', true);
+        } else {
+            $("#isShowed").prop('checked', false);
+
+        }
+        CKEDITOR.instances['noidung'].setData(allcoursejavascript[i]["noichung"]); // where editor1 is id
+        CKEDITOR.instances['doituong'].setData(allcoursejavascript[i]["noichung"]); // where editor1 is id
+
+        $("#ghichu").val(allcoursejavascript[i]["ghichu"]);
+        $("#btnSaveChange").val("Cập nhật thay đổi");
+    }
+    function deleteCourse(name) {
+        $.ajax({
+            url: '/Quanli/DeleteCourse',
+            data: {
+                courseName: name
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+            },
+            type: 'POST'
+        });
+    }
+    $(function () {
+        $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+        $("#datepicker2").datepicker({ dateFormat: 'dd-mm-yy' });
+        
+    });
+    function loadListCourse() {
+        $.ajax({
+            url: '/Quanli/allCourse',
+            data: {
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+
+                var obj = JSON.parse(data);
+                allcoursejavascript = obj;
+
+            },
+            type: 'GET'
+        });
+    }
+    $(document).ready(function () {
+        console.log("document loaded");
+        loadListCourse();
+    });
+
+</script>

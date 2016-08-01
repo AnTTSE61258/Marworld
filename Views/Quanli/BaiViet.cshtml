@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Quản lí bài viết";
+    List<BaiViet> baiviets = ViewBag.allBaiViet;
+    ViewBag.notRenderMenu = true;
+
+}
+<script>
+    var baivietjavascript;
+</script>
+<div class="container row">
+    <p class="label-danger">@Html.Raw(ViewBag.e)</p>
+
+    <div class="col-md-4">
+
+        @using (Html.BeginForm("addBaiViet", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input class="form-control" name="id" id="id" type="hidden"/>
+            <label>Title</label>
+            <input class="form-control" name="title" id="title" />
+
+            <label>Description</label>
+            <input class="form-control" name="description" id="description" />
+            <label>Category</label>
+            <select class="form-control" name="category" id="category">
+                <option value="@SLIMCONFIG.category_tintuccongdong">Tin tức cộng đồng</option>
+                <option value="@SLIMCONFIG.category_tieudiemchuyennganh">Tiêu điểm chuyên ngành</option>
+                <option value="@SLIMCONFIG.category_baivietchuyengia">Bài viết chuyên gia</option>
+                <option value="@SLIMCONFIG.category_sukien">Sự kiện</option>
+            </select>
+            <label id="labelHinhanhkhoahoc">Hình ảnh bài viết</label>
+            <input class="form-control" type="file" name="file" />
+            <textarea id="detail" class="form-control" rows="10" name="detail"></textarea>
+            <input type="submit" class="btn btn-success" value="Thêm bài viết mới" id="btnsubmit"/>
+        }
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Images</th>
+                    <th>title</th>
+                    <th>Category</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    for (int i=0;i<baiviets.Count;i++)
+                    {
+                        BaiViet b = baiviets.ElementAt(i);
+                        <tr>
+                            <td>@b.id
+                            <button class="btn btn-default" onclick="loadEditBaiViet(@i)">Edit</button>
+                            </td>
+                            
+                            <td><img src="@b.image" style="width:200px;height:auto"/></td>
+                            <td>@b.title</td>
+                            <td>@b.category</td>
+                            <td><button class="btn btn-danger" onclick="deleteBaiViet(@b.id)">Delete</button></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+<script>
+    CKEDITOR.replace('detail');
+    function loadEditBaiViet(id) {
+        var baiviet = baivietjavascript[id];
+        $("#id").val(baiviet["id"]);
+        $("#title").val(baiviet["title"]);
+        $("#description").val(baiviet["description"]);
+        $("#category").val(baiviet["category"]);
+        $("#btnsubmit").val("Cập nhật bài viết");
+        CKEDITOR.instances['detail'].setData(baiviet["detail"]); // where editor1 is id
+
+
+    }
+
+    function deleteBaiViet(id){
+        $.ajax({
+            url: '/Quanli/DeleteBaiViet',
+            data: {
+                id:id           
+            
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+            },
+            type: 'POST'
+        });
+    }
+
+    function loadListBaiviet() {
+        $.ajax({
+            url: '/Quanli/AllBaiViet',
+            data: {
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                var obj = JSON.parse(data);
+                baivietjavascript = obj;
+
+            },
+            type: 'GET'
+        });
+    }
+    $(document).ready(function () {
+        console.log("document loaded");
+        loadListBaiviet();
+    });
+</script>

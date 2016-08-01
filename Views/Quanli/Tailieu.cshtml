@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Quản lí tài liệu";
+    List<Tailieu> tailieux = ViewBag.tailieux;
+    ViewBag.notRenderMenu = true;
+
+}
+<script>
+    var tailieuxjavascript;
+</script>
+<div class="row container" style="margin-top:10px">
+    <div class="col-md-4">
+        @using (Html.BeginForm("saveTaiLieu", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input id="id" type="hidden" class="form-control" name="id" />
+            <label>Tên tài liệu</label>
+            <input id="name" class="form-control" name="name" />
+            <label>Tên tác giả</label>
+            <input id="authorname" class="form-control" name="authorname" />
+            <label>Vị trí công tác</label>
+            <input id="company" class="form-control" name="company" />
+            <label>Lời mở đầu</label>
+            <textarea id="loimodau" class="form-control" name="loimodau" rows="5"></textarea>
+            <label>Giới thiệu chung</label>
+            <textarea id="gioithieuchung" class="form-control" name="gioithieuchung" rows="5" ></textarea>
+            <select class="form-control" name="category" id="category">
+                <option value="@SLIMCONFIG.tailieu_category_thuonghieu">Thương hiệu</option>
+                <option value="@SLIMCONFIG.tailieu_category_marketing">Marketing</option>
+
+            </select>
+            <label>File tài liệu</label>
+            <input type="file" name="file" />
+            <label>File ảnh đại diện</label>
+            <input type="file" name="imageFile" />
+            <label>Ảnh đại diện tác giả</label>
+            <input type="file" name="authorFile" />
+            <textarea name="noidung" id="noidung"></textarea>
+            <input type="submit" id="btnSave" class="btn btn-success" value="Save tài liệu"/>
+        }
+      
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên tài liệu</th>
+                    <th>Tác giả</th>
+                    <th>Ảnh đại diện</th>
+                    <th>Ảnh tác giả</th>
+                    <th>Files</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    for(int i = 0; i < tailieux.Count; i++)
+                    {
+                        Tailieu t = tailieux.ElementAt(i);
+                        if (t != null)
+                        {
+                            <tr>
+                                <td>@t.id
+                                <button class="btn btn-default" onclick="loadEditTailieu(@i)">Edit</button>
+                                </td>
+                                <td>@t.name</td>
+                                <td>@t.authorname</td>
+                                <td>
+                                    <img alt="Image" src="@t.imageUrl" style="width:150px;height:auto"/>
+                                </td>
+                                <td>
+                                    <img alt="Image" src="@t.authorURL" style="width:150px;height:auto" />
+
+                                </td>
+                                <td>
+                                    <form method="get" action="@t.fileURL">
+                                        <button type="submit">Download!</button>
+                                    </form>
+                                </td>
+                                <td><button class="btn btn-danger" onclick="deleteTailieu(@t.id)">Delete</button></td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+   
+        @using (Html.BeginForm("saveTailieuText", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <label>Text trong menu tài liệu</label>
+            <textarea id="tailieutext" class="form-control" rows="5" name="tailieutext">@ViewBag.tailieutext</textarea>
+            <br />
+            <input type="submit" class="btn btn-success" value="Lưu lại" id="btnsubmit" />
+        }
+     </div>
+</div>
+<script>
+    CKEDITOR.replace('noidung');
+    function deleteTailieu(id){
+        $.ajax({
+            url: '/Quanli/deletetailieu',
+            data: {
+                id:id           
+            
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+            },
+            type: 'POST'
+        });
+    }
+
+    function loadEditTailieu(i){
+        var tailieu = tailieuxjavascript[i];
+        $("#id").val(tailieu["id"]);
+        $("#name").val(tailieu["name"]);
+        $("#authorname").val(tailieu["authorname"])
+        $("#company").val(tailieu["company"])
+        $("#loimodau").val(tailieu["loimodau"])
+        $("#gioithieuchung").val(tailieu["gioithieuchung"])
+        $("#category").val(tailieu["category"]);
+        CKEDITOR.instances['noidung'].setData(tailieu["noidung"]); // where editor1 is id
+        $("#btnSave").val("Cập nhật thay đổi");
+    }
+    function loadListTailieu() {
+        $.ajax({
+            url: '/Quanli/AllTailieu',
+            data: {
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                var obj = JSON.parse(data);
+                tailieuxjavascript = obj;
+
+            },
+            type: 'GET'
+        });
+    }
+    $(document).ready(function () {
+        console.log("document loaded");
+        loadListTailieu();
+    });
+</script>

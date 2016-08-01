@@ -1,0 +1,34 @@
+﻿@{ 
+    ViewBag.Title = "Quản lí Marworld - Admin only";
+
+}
+
+<div>
+    <div>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/TrangChu')">Quản lí trang chủ</button>
+
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/Khoahoc')">Quản lí khóa học</button>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/Chuyengia')">Quản lí giảng viên</button>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/daotaodoanhnghiep')">Quản lí mục đào tạo doanh nghiệp</button>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/vechungtoi')">Quản lí mục về chúng tôi</button>
+       
+         <button class="btn btn-success" onclick="changeIframe('/Quanli/camnhan')">Quản lí cảm nhận</button>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/baiviet')">Quản lí bài viết</button>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/CoHoiNgheNghiep')">Quản lí trang cơ hội nghề nghiệp</button>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/Giaotrinhchuyenbiet')">Quản lí trang giáo trình chuyên biệt</button>
+        <button class="btn btn-success" onclick="changeIframe('/Quanli/tailieu')">Quản lí tài liệu</button>
+
+
+
+    </div>
+    <div>
+        <iframe id="mainIframe" style="width:100%;height:2000px" src="/Quanli/Trangchu"></iframe>
+    </div>
+</div>
+  <script>
+      function changeIframe(url) {
+          $('#mainIframe').attr('src', url)
+      }
+  </script>
+
+

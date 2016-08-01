@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Quản lí trang sự kiện nổi bật";
+}
+<div class="container">
+    @using (Html.BeginForm("saveSukiennoibat", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <label>Text sự kiện nổi bật</label>
+        <textarea name="sukiennoibat" rows="10" class="form-control">@ViewBag.text_sukiennoibat</textarea>
+        <input type="submit" class="btn btn-success" value="Save"/>
+    }
+   
+</div>
+

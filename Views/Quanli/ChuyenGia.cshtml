@@ -1,0 +1,136 @@
+﻿
+@{ 
+    List<Teacher> allTeachers = ViewBag.allTeachers;
+    ViewBag.notRenderMenu = true;
+
+}
+<script>
+    var allteacherjavascript;
+</script>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("addTeacher", "Quanli", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+            <p class="label-danger">@Html.Raw(ViewBag.e)</p>
+
+
+            <div>
+                <label>ID</label>
+                <input class="form-control" type="hidden" name="id" id="teacherId" />
+            </div>
+            <div>
+                <label>Tên</label>
+                <input class="form-control" type="text" name="name" id="name" />
+            </div>
+            <div>
+                <label id="labelHinhanhgiangvien">Hình ảnh giảng viên</label>
+                <input class="form-control" type="file" name="file" />
+            </div>
+            <div>
+                <label>Công tác tại</label>
+                <input class="form-control" type="text" name="congty" id="congty" />
+            </div>
+            <div>
+                <label>Câu nói: </label>
+                <input class="form-control" type="text" name="caunoi" id="caunoi" />
+            </div>
+            <div>
+                <label>Giới thiệu</label>
+                <textarea rows="10" class="form-control" type="text" name="gioithieu" id="gioithieu"></textarea>
+            </div>
+            <input type="submit" value="Thêm giảng viên" class="btn btn-success" id="btnSaveChange" style="width:100%" />
+
+}
+    </div>
+
+    <div class="col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>No</td>
+                    <td>Tên giảng viên</td>
+                    <td>Hình ảnh</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                for (int i = 0; i < allTeachers.Count; i++)
+                {
+                    Teacher c = allTeachers.ElementAt(i);
+                        <tr>
+                            <td>
+                                @c.id
+                            </td>
+                            <td>
+                                @c.name
+                                <button class="btn btn-default" onclick="edit('@i')">Edit</button>
+                            </td>
+                            <td>
+                                <img src="@c.picture" style="width:100px;height:auto" />
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" onclick="deleteTeacher('@c.id')">Delete</button>
+                            </td>
+                        </tr>
+
+                }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    function deleteTeacher(id) {
+        $.ajax({
+            url: '/Quanli/DeleteTeacher',
+            data: {
+                id:id
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                alert(data)
+                location.href = location.href
+
+            },
+            type: 'POST'
+        });
+    }
+    function edit(i) {;
+        $("#teacherId").val(allteacherjavascript[i]["id"]);
+        $("#name").val(allteacherjavascript[i]["name"]);
+        $("#congty").val(allteacherjavascript[i]["congty"]);
+        $("#caunoi").val(allteacherjavascript[i]["caunoi"]);
+        $("#gioithieu").val(allteacherjavascript[i]["gioithieu"]);
+        $("#labelHinhanhgiangvien").html("Hình ảnh giảng viên <br/>(Không chọn để giữ nguyên ảnh cũ)");
+        $("#btnSaveChange").val("Cập nhật thay đổi");
+
+    }
+
+    function loadListTeacher() {
+        $.ajax({
+            url: '/Quanli/allTeacher',
+            data: {
+            },
+            error: function () {
+                alert("error")
+                // $("#alertArea").html("Error occured!")
+            },
+            success: function (data) {
+                    
+                var obj = JSON.parse(data);
+                allteacherjavascript = obj;
+
+            },
+            type: 'GET'
+        });
+    }
+    $(document).ready(function () {
+        console.log("document loaded");
+        loadListTeacher();
+    });
+
+</script>
